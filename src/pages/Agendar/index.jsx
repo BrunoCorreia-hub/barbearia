@@ -1,18 +1,18 @@
 import { Agendamento, Container, StepIndicator, StepTitle, ProgressBar, ProgressFill } from "./styles"
 import { useState } from "react"
 import ServiceSelection from "../../components/ServiceSelection";
-import Calendar from "../../components/Calendar";
+import Calendar from "../../components/Calendar/index";
 import TimeSelection from "../../components/TimeSelection";
 import BookingSummary from "../../components/BookingSummary";
-import { Services } from "../../constants/bookingData";
+import { Services, DAYS } from "../../constants/bookingData";
 import NavigationButtons from "../../components/NavigationButtons";
 
 function Agendar() {
-    /* const today = new Date(); */
+    const today = new Date();
     const [step, setStep] = useState(1);
     const [selectedService, setSelectedService] = useState(null);
-    /* const [calYear, setCalYear] = useState(today.getFullYear());
-    const [calMonth, setCalMonth] = useState(today.getMonth()); */
+    const [calYear, setCalYear] = useState(today.getFullYear());
+    const [calMonth, setCalMonth] = useState(today.getMonth());
     const [selectedDay, setSelectedDay] = useState(null);
     const [selectedTime, setSelectedTime] = useState(null);
     const [name, setName] = useState("");
@@ -43,7 +43,13 @@ function Agendar() {
             )}
             {step === 2 && (
                 <>
-                    <Calendar />
+                    <Calendar 
+                        DAYS={DAYS}
+                        calYear={calYear}
+                        calMonth={calMonth}
+                        setSelectedDay={setSelectedDay}
+                        today={today}
+                    />
                     <TimeSelection />
                 </>
             )}

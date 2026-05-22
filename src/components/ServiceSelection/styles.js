@@ -6,8 +6,10 @@ export const ContainerService = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     margin-top: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     animation: ${fadeSlideUp} 0.6s ease;
+    border-bottom: 0.1rem solid ${props => props.theme.white};
+    padding: 0 0 3rem 0;
 `;
 
 export const ServiceCard = styled.div`
