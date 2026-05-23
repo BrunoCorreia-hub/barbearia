@@ -4,7 +4,7 @@ import ServiceSelection from "../../components/ServiceSelection";
 import Calendar from "../../components/Calendar/index";
 import TimeSelection from "../../components/TimeSelection";
 import BookingSummary from "../../components/BookingSummary";
-import { Services, DAYS } from "../../constants/bookingData";
+import { Services, DAYS, MONTHS } from "../../constants/bookingData";
 import NavigationButtons from "../../components/NavigationButtons";
 
 function Agendar() {
@@ -45,8 +45,12 @@ function Agendar() {
                 <>
                     <Calendar 
                         DAYS={DAYS}
+                        MONTHS={MONTHS}
                         calYear={calYear}
+                        setCalYear={setCalYear}
                         calMonth={calMonth}
+                        setCalMonth={setCalMonth}
+                        selectedDay={selectedDay}
                         setSelectedDay={setSelectedDay}
                         today={today}
                     />

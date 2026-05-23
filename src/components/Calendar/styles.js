@@ -32,17 +32,33 @@ export const CalendarMonth = styled.p`
 `;
 
 export const CalGrid = styled.div`
-    display: flex;
-    justify-content: space-evenly;
-    border: 0.1rem solid ${props => props.theme.white};
-    padding: 0.7rem 0;
-
+    display: grid;
+    grid-template-columns: repeat(7, 60px);
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 `;
 
 export const Callabel = styled.label`
     color: ${props => props.theme.white};
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.8rem 0;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #fff;
 `;
 
-export const CalDay = styled.div`
-    
+export const CalDay = styled.button`
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    border: 0.1rem solid #333;
+    background: #111;
+    color: orange;
+    font-size: 2rem;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 `;
