@@ -8,7 +8,9 @@ export const CalendarBox = styled.div``;
 
 export const CalHeader = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
     margin-bottom: 3rem;
 `;
 
@@ -29,6 +31,8 @@ export const CalNav = styled.button`
 
 export const CalendarMonth = styled.p`
     color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
 `;
 
 export const CalGrid = styled.div`
@@ -46,17 +50,22 @@ export const Callabel = styled.label`
     text-align: center;
     padding: 0.8rem 0;
     border-radius: 0.5rem;
-    border: 0.1rem solid #fff;
 `;
 
 export const CalDay = styled.button`
     width: 4rem;
     height: 4rem;
     border-radius: 1rem;
-    border: 0.1rem solid #333;
+    border: 0.2rem solid ${({ $today, $selected }) => {
+        if($today) return "orange";
+        if($selected) return "green";
+        return "transparent"
+    }};
     background: #111;
-    color: orange;
+    color: ${({ $today }) => (($today ? "orange" : "#fff"))};
     font-size: 2rem;
+    opacity: ${({ $disabled }) => $disabled ? 0.4 : 1};
+    pointer-events: ${({ $disabled }) => ($disabled ? "none" : "all")};
 
     &:hover {
         transform: scale(1.05);

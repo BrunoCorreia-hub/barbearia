@@ -1,4 +1,4 @@
-import { Agendamento, Container, StepIndicator, StepTitle, ProgressBar, ProgressFill } from "./styles"
+import { Agendamento, Container, GridCalTime, StepIndicator, StepTitle, ProgressBar, ProgressFill } from "./styles"
 import { useState } from "react"
 import ServiceSelection from "../../components/ServiceSelection";
 import Calendar from "../../components/Calendar/index";
@@ -42,7 +42,7 @@ function Agendar() {
                 />
             )}
             {step === 2 && (
-                <>
+                <GridCalTime>
                     <Calendar 
                         DAYS={DAYS}
                         MONTHS={MONTHS}
@@ -54,8 +54,12 @@ function Agendar() {
                         setSelectedDay={setSelectedDay}
                         today={today}
                     />
-                    <TimeSelection />
-                </>
+                    <TimeSelection
+                    selectedDay={selectedDay}
+                    selectedTime={selectedTime}
+                    setSelectedTime={setSelectedTime}
+                    />
+                </GridCalTime>
             )}
             {step === 3 && (
                 <BookingSummary />

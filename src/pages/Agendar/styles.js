@@ -12,6 +12,12 @@ export const Container = styled.div`
     animation: ${fadeHeader} 0.6s ease;
 `;
 
+export const GridCalTime = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+`;
+
 export const StepIndicator = styled.h2`
     color: ${props => props.theme.darkGray};
     margin-bottom: 1rem;

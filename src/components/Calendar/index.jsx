@@ -3,7 +3,6 @@ import { CalendarLayout, CalendarBox, CalHeader, CalNav, CalendarMonth, CalGrid,
 
 function Calendar({ DAYS, MONTHS, calYear, setCalYear, calMonth, setCalMonth, selectedDay, setSelectedDay, today }){
     const { firstDay, daysInMonth } = getDaysInMonth(calYear, calMonth)
-    console.log(firstDay, daysInMonth)
     const isDisabled = (d) => {
         const date = new Date(calYear, calMonth, d);
         return date < new Date(today.getFullYear(), today.getMonth(), today.getDate())
@@ -48,7 +47,6 @@ function Calendar({ DAYS, MONTHS, calYear, setCalYear, calMonth, setCalMonth, se
                             <CalDay
                                 key={d}
                                 $disabled={dis}
-
                                 $today={isTod}
                                 $selected={selectedDay === d}
                                 onClick={() => !dis && setSelectedDay(d)}
