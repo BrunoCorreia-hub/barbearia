@@ -1,5 +1,5 @@
 import { TIMES } from "../../constants/bookingData"
-import { TimeBox, TimeTitle, TimeGrid, Periodos, TimeSlot, Paragraph } from "./styles";
+import { TimeBox, TimeTitle, TimeGrid, TimeFragment, Periodos, TimeSlot, Paragraph } from "./styles";
 
 function TimeSelection({ selectedDay, selectedTime, setSelectedTime }) {
     const periodos = {
@@ -20,19 +20,20 @@ function TimeSelection({ selectedDay, selectedTime, setSelectedTime }) {
                 <TimeGrid>
                     {Object.entries(periodos).map(([periodo, slots]) =>
                         slots.length > 0 && (
-                            <>
+                            <TimeFragment key={periodo}>
                                 <p>{labels[periodo]}</p>
-                                <Periodos key={periodo}>
+                                <Periodos>
                                     {slots.map(s => (
                                         <TimeSlot key={s}>{s}</TimeSlot>
                                     ))}
                                 </Periodos>
-                            </>
+                            </TimeFragment>
                         )
                     )}
                 </TimeGrid>
             ) : (
-                <Paragraph>Selecione uma data para ver<br /> horários disponiveis</Paragraph>
+                <Paragraph>Selecione uma data para ver<br />
+                    horários disponiveis</Paragraph>
             )}
         </TimeBox>
     )

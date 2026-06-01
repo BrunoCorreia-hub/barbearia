@@ -2,9 +2,7 @@ import { Formater } from "../../utils/Formater";
 import { ContainerService, ServiceCard, SelectedBadged, Name, Price, Duration } from "./styles";
 
 function ServiceSelection({ Services, selectedService, setSelectedService }) {
-
     return (
-        <>
             <ContainerService>
                 {Services.map((s) => (
                     <ServiceCard
@@ -21,7 +19,7 @@ function ServiceSelection({ Services, selectedService, setSelectedService }) {
                     </ServiceCard>
                 ))}
             </ContainerService>
-        </>
+
     )
 }
 

@@ -14,11 +14,14 @@ export const TimeGrid = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+`;
 
+export const TimeFragment = styled.div`
      p{
         color: ${props => props.theme.white};
         font-size: 1.5rem;
         font-weight: bold;
+        margin-bottom: 1rem;
     }
 `;
 
