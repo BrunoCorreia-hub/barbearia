@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { fadeIn } from "../../styles/animations";
 
 export const TimeBox = styled.div`
     padding: 2.5rem;
+    animation: ${fadeIn} 0.6s ease;
 `; 
 
 export const TimeTitle = styled.h1`
@@ -36,13 +38,42 @@ export const TimeSlot = styled.button`
     font-size: 1.5rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    background-color: ${props => props.theme.gray};
-    border: 0.2rem solid ${({ $selected }) => ($selected ? "orange" : "#fff")};
-    color: ${({ $selected }) => ($selected ? "orange" : "white")};
+    background-color: ${({ $isActive }) => ($isActive ? "green" : "black")};
+    border: 0.1rem solid ${({ $isActive }) => ($isActive ? "green" : "#fff")};
+    color: ${props => props.theme.white};
     transition: 0.4s ease;
     &:hover{
-        transform: scale(1.05);
+        transform: scale(1.02);
+        background-color: #708090;
     }
+`;
+
+export const GridTime = styled.div`
+    background-color: ${props => props.theme.lightGray};
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    border: 0.2rem solid ${props => props.theme.green}
+`;
+
+export const SelectionMessage = styled.h1`
+    color: ${props => props.theme.green};
+    font-weight: 400;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    p{
+        font-weight: bold;
+    }
+`;
+
+export const SelectionMessageOption = styled.h2`
+    border: 0.1rem solid ${props => props.theme.white};
+    border-radius: 0.2rem;
+    color: ${props => props.theme.white};
+    padding: 0.5rem 1rem;
+    font-weight: 300;
 `;
 
 export const Paragraph = styled.h2`

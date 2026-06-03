@@ -16,6 +16,7 @@ export const GridCalTime = styled.div`
     display: flex;
     justify-content: center;
     gap: 5rem;
+    margin-bottom: 5rem;
 `;
 
 export const StepIndicator = styled.h2`

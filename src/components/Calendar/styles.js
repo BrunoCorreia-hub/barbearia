@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { fadeIn } from "../../styles/animations";
 
 export const CalendarLayout = styled.div`
     padding: 2rem;
+    animation: ${fadeIn} 0.6s ease;
 `;
 
 export const CalendarBox = styled.div``;

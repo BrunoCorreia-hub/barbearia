@@ -1,5 +1,5 @@
 import { TIMES } from "../../constants/bookingData"
-import { TimeBox, TimeTitle, TimeGrid, TimeFragment, Periodos, TimeSlot, Paragraph } from "./styles";
+import { TimeBox, TimeTitle, TimeGrid, TimeFragment, Periodos, TimeSlot, GridTime, SelectionMessage, SelectionMessageOption, Paragraph } from "./styles";
 
 function TimeSelection({ selectedDay, selectedTime, setSelectedTime }) {
     const periodos = {
@@ -24,11 +24,23 @@ function TimeSelection({ selectedDay, selectedTime, setSelectedTime }) {
                                 <p>{labels[periodo]}</p>
                                 <Periodos>
                                     {slots.map(s => (
-                                        <TimeSlot key={s}>{s}</TimeSlot>
+                                        <TimeSlot 
+                                        key={s}
+                                        onClick={() => setSelectedTime(s)}
+                                        $isActive={selectedTime === s}
+                                        >{s}</TimeSlot>
                                     ))}
                                 </Periodos>
                             </TimeFragment>
                         )
+                    )}
+
+                    {selectedTime ? (
+                        <GridTime>
+                            <SelectionMessage> ✔ Horário selecionado: <p>{selectedTime}</p></SelectionMessage>
+                        </GridTime>
+                    ) : (
+                        <SelectionMessageOption> ⌚ Escolha um horário</SelectionMessageOption>
                     )}
                 </TimeGrid>
             ) : (
