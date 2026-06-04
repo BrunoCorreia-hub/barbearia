@@ -62,7 +62,19 @@ function Agendar() {
                 </GridCalTime>
             )}
             {step === 3 && (
-                <BookingSummary />
+                <BookingSummary 
+                    selectedService={selectedService}
+                    setSelectedService={setSelectedService}
+                    selectedDay={selectedDay}
+                    setSelectedDay={setSelectedDay}
+                    calMonth={calMonth}
+                    selectedTime={selectedTime}
+                    calYear={calYear}
+                    name={name}
+                    setName={setName}
+                    phone={phone}
+                    setPhone={setPhone}
+                />
             )}
             <NavigationButtons 
             step={step}
