@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { BottomBar, BackBtn } from "./styles";
 
-function NavigationButtons({ step, setStep, selectedService, selectedDay, selectedTime, name, phone, setDone }){
+function NavigationButtons({ step, setStep, selectedService, selectedDay, selectedTime, name, phone, onConfirm }) {
 
     const navigate = useNavigate();
-    return(
+    return (
         <BottomBar>
             {step > 1 ? (
                 <BackBtn onClick={() => setStep(s => s - 1)}>← voltar</BackBtn>
@@ -14,19 +14,23 @@ function NavigationButtons({ step, setStep, selectedService, selectedDay, select
 
             {step < 3 ? (
                 <BackBtn
-                 disable={
-                    (step === 1 && !selectedService) || 
-                    (step === 2 && (!selectedDay || !selectedTime))
-                 }
-                 onClick={() => setStep(s => s + 1)}
+                    disable={
+                        (step === 1 && !selectedService) ||
+                        (step === 2 && (!selectedDay || !selectedTime))
+                    }
+                    onClick={() => setStep(s => s + 1)}
                 >
                     {step === 1 ? "Escolher data e horário →" : "Confirmar dados →"}
                 </BackBtn>
             ) : (
-                <BackBtn
-                 disable={!name || !phone}
-                 onClick={() => setDone(true)}
-                >Confirmar agendamento ✓</BackBtn>
+                <div>
+                    <BackBtn
+                        disabled={!name || !phone}
+                        onClick={onConfirm}
+                    >Confirmar agendamento ✓</BackBtn>
+
+                </div>
+
             )}
         </BottomBar>
     )

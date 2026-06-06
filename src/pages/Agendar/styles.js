@@ -17,6 +17,7 @@ export const GridCalTime = styled.div`
     justify-content: center;
     gap: 5rem;
     margin-bottom: 5rem;
+    margin-top: 5rem;
 `;
 
 export const StepIndicator = styled.h2`
@@ -31,3 +32,12 @@ export const StepTitle = styled.h1`
 export const ProgressBar = styled.div``;
 
 export const ProgressFill = styled.div``;
+
+/* export const SuccessContainer = styled.div`
+    h1{
+        color: ${props => props.theme.text};
+    }
+    p{
+        color: ${props => props.theme.text};
+    }
+`; */

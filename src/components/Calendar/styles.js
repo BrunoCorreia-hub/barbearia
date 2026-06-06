@@ -2,8 +2,11 @@ import styled from "styled-components";
 import { fadeIn } from "../../styles/animations";
 
 export const CalendarLayout = styled.div`
-    padding: 2rem;
+    padding: 1rem;
     animation: ${fadeIn} 0.6s ease;
+    background-color: ${props => props.theme.backgroundSecond};
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem ${props => props.theme.ambar};
 `;
 
 export const CalendarBox = styled.div``;

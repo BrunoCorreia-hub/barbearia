@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const FormBox = styled.form`
     padding: 3rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     gap: 3rem;
 `;
 
 export const Summary = styled.div`
+    width: 40rem;
     background-color: ${props => props.theme.backgroundSecond};
     padding: 2rem;
     border-radius: 1rem;
@@ -18,7 +19,9 @@ export const Summary = styled.div`
 export const Title = styled.h1`
     color: ${props => props.theme.textSecond};
     margin-bottom: 0.8rem;
+    padding: 0 0 1rem 0;
     font-weight: 400;  
+    border-bottom: 0.1rem solid ${props => props.theme.textSecond};
 `;
 
 export const SummaryGrid = styled.div`
@@ -26,7 +29,6 @@ export const SummaryGrid = styled.div`
     flex-direction: column;
     gap: 1rem;
     padding: 2rem 0;
-    border-top: 0.1rem solid ${props => props.theme.textSecond};
     border-bottom: 0.1rem solid ${props => props.theme.textSecond};
     margin-bottom: 2rem;
 `;
@@ -48,12 +50,15 @@ export const SummaryRow = styled.div`
 `;
 
 export const FieldGroup = styled.div`
+    width: 40rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     background-color: ${props => props.theme.backgroundSecond};
     padding: 2rem;
     border-radius: 1rem;
+    border: 0.1rem solid ${props => props.theme.textSecond};
+    min-height: stretch;
 `;
 
 export const Field = styled.div`
@@ -64,15 +69,15 @@ export const Field = styled.div`
 
 export const Label = styled.label`
     color: ${props => props.theme.textSecond};
-    font-size: 2rem;
+    font-size: 1.5rem;
 `;
 
 export const Input = styled.input`
-    padding: 0.5rem;
+    padding: 1rem;
     background-color: transparent;
     border-radius: 0.5rem;
     border: 0.1rem solid ${props => props.theme.secondBlack};
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: ${props => props.theme.secondBlack};
+    color: ${props => props.theme.text};
 `;

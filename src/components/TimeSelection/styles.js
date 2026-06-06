@@ -3,7 +3,11 @@ import { fadeIn } from "../../styles/animations";
 
 export const TimeBox = styled.div`
     padding: 2.5rem;
+    width: 55rem;
     animation: ${fadeIn} 0.6s ease;
+    background-color: ${props => props.theme.backgroundSecond};
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem ${props => props.theme.ambar};
 `; 
 
 export const TimeTitle = styled.h1`
@@ -32,6 +36,7 @@ export const Periodos = styled.div`
     padding-bottom: 2rem;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 `;
 
 export const TimeSlot = styled.button`
