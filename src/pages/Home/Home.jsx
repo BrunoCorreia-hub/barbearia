@@ -3,6 +3,7 @@ import Header from "../../components/Header"
 import { Container, Title, Sub, ContainerSection, Image, Contatos } from "./styles"
 import barbearia from "../../assets/barbearia.png"
 import { useNavigate } from "react-router-dom"
+import About from "../../components/About"
 
 function Home() {
   const navigate = useNavigate()
@@ -29,8 +30,9 @@ function Home() {
 
       <Contatos>
         <Button onClick={() => navigate("/agendar")}>Agendar horário →</Button>
-        <Button>Ver serviços</Button>
+        <Button onClick={() => navigate("/agendar")}>Ver serviços</Button>
       </Contatos>
+      <About />
     </Container>
   )
 }

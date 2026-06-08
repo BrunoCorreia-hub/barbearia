@@ -8,7 +8,6 @@ function Header() {
         <ContainerHeader>
             <Title>Diogenes Barbearia</Title>
             <NavLinks>
-                <a href="#">Serviços</a>
                 <a href="#">Galeria</a>
                 <a href="#">Sobre</a>
             </NavLinks>

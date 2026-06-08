@@ -1,4 +1,4 @@
-import { Agendamento, Container, GridCalTime, StepIndicator, StepTitle, ProgressBar, ProgressFill } from "./styles"
+import { Agendamento, Container, GridCalTime, StepIndicator, StepTitle, ProgressBar, ProgressFill, SuccessContainer } from "./styles"
 import { useEffect, useState } from "react"
 import ServiceSelection from "../../components/ServiceSelection";
 import Calendar from "../../components/Calendar/index";
@@ -20,7 +20,7 @@ function Agendar() {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [done, setDone] = useState(false);
-
+    console.log("done:", done);
     const pct = (step / 3) * 100;
 
     useEffect(() => {
@@ -37,6 +37,17 @@ function Agendar() {
     const handleConfirmBooking = () => {
         setDone(true)
     }
+
+    if (done) {
+        return (
+            <SuccessContainer>
+                <span>✔</span>
+                <h1>Agendamento concluido com sucesso!  🎉</h1>
+                <p>Você será redirecionado em instantes...</p>
+            </SuccessContainer>
+        )
+    }
+
     return (
         <Agendamento>
             <Container>
@@ -101,7 +112,6 @@ function Agendar() {
                 selectedTime={selectedTime}
                 name={name}
                 phone={phone}
-                setDone={setDone}
                 onConfirm={handleConfirmBooking}
             />
         </Agendamento>

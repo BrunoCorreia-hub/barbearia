@@ -3,7 +3,7 @@ import { fadeSlideUp, fadeIn } from "../../styles/animations";
 
 export const Container = styled.div`
     background-color: ${props => props.theme.background};
-    padding: 1.5rem;
+    padding: 2rem;
     gap: 1rem;
     width: 100vw;
     min-height: 100vh;
