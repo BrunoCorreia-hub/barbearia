@@ -47,6 +47,13 @@ export const TimeSlot = styled.button`
     border: 0.1rem solid ${({ $isActive }) => ($isActive ? "green" : "#fff")};
     color: ${props => props.theme.white};
     transition: 0.4s ease;
+    
+    ${({ $isUnavailable }) => $isUnavailable && `
+    opacity: 0.35;
+    cursor: not-allowed;
+    text-decoration: line-through;
+    pointer-events: none;
+  `}
     &:hover{
         transform: scale(1.02);
         background-color: #708090;

@@ -1,7 +1,11 @@
 import { TIMES } from "../../constants/bookingData"
 import { TimeBox, TimeTitle, TimeGrid, TimeFragment, Periodos, TimeSlot, GridTime, SelectionMessage, SelectionMessageOption, Paragraph } from "./styles";
 
-function TimeSelection({ selectedDay, selectedTime, setSelectedTime }) {
+function TimeSelection({ selectedDay, selectedTime, setSelectedTime, bookedSlots = [], blockedSlots = [] }) {
+    const isUnavailable = (slot) => {
+        bookedSlots.includes(slot) || blockedSlots.includes(slot)
+    }
+
     const periodos = {
         manha: TIMES.filter(h => parseInt(h.split(':')[0]) < 12),
         tarde: TIMES.filter(h => parseInt(h.split(':')[0]) >= 12 && parseInt(h.split(':')[0]) < 18),
@@ -23,13 +27,21 @@ function TimeSelection({ selectedDay, selectedTime, setSelectedTime }) {
                             <TimeFragment key={periodo}>
                                 <p>{labels[periodo]}</p>
                                 <Periodos>
-                                    {slots.map(s => (
-                                        <TimeSlot 
-                                        key={s}
-                                        onClick={() => setSelectedTime(s)}
-                                        $isActive={selectedTime === s}
-                                        >{s}</TimeSlot>
-                                    ))}
+                                    {slots.map(s => {
+                                        const unavailable = isUnavailable(s)
+                                        return (
+                                            <TimeSlot
+                                                key={s}
+                                                onClick={() => !unavailable && setSelectedTime(s)}
+                                                $isActive={selectedTime === s}
+                                                $isUnavailable={unavailable}
+                                                disabled={unavailable}
+                                                title={unavailable ? "Horário indisponivel" : undefined}
+                                            >
+                                                {s}
+                                            </TimeSlot>
+                                        )
+                                    })}
                                 </Periodos>
                             </TimeFragment>
                         )
@@ -52,3 +64,6 @@ function TimeSelection({ selectedDay, selectedTime, setSelectedTime }) {
 }
 
 export default TimeSelection
+
+
+/* Senha supabase banco de dados = CxBY2H9O6xuU3YMJ */

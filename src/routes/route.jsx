@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "../pages/Home/Home"
 import Agendar from "../pages/Agendar"
+import Admin from "../pages/Admin"
 
 const BarberRoutes = () => {
     return(
@@ -8,6 +9,7 @@ const BarberRoutes = () => {
             <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/agendar" element={<Agendar />}/>
+                <Route path="/admin" element={<Admin />}/>
                 <Route path="*" element={<h2>Pagina nao encontrada</h2>} />
             </Routes>
         </BrowserRouter>
