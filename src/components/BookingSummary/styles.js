@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormBox = styled.form`
+export const FormBox = styled.div`
     padding: 3rem;
     display: flex;
     justify-content: center;
