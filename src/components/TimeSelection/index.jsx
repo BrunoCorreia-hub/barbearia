@@ -3,7 +3,7 @@ import { TimeBox, TimeTitle, TimeGrid, TimeFragment, Periodos, TimeSlot, GridTim
 
 function TimeSelection({ selectedDay, selectedTime, setSelectedTime, bookedSlots = [], blockedSlots = [] }) {
     const isUnavailable = (slot) => {
-        bookedSlots.includes(slot) || blockedSlots.includes(slot)
+       return bookedSlots.includes(slot) || blockedSlots.includes(slot)
     }
 
     const periodos = {

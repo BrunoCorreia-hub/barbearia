@@ -14,7 +14,7 @@ function ServiceSelection({ Services, selectedService, setSelectedService }) {
                         <div>
                             <Name>{s.name}</Name>
                             <Price>{Formater(s.price)}</Price>
-                            <Duration>{s.duration_min}</Duration>
+                            <Duration>{s.duration_min}min</Duration>
                         </div>
                     </ServiceCard>
                 ))}

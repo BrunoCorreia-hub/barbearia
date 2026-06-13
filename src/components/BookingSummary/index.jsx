@@ -24,7 +24,7 @@ function BookingSummary({ selectedService, selectedDay, calMonth, selectedTime, 
                             </SummaryRow>
                             <SummaryRow>
                                 <Label> ⏳ Duração:</Label>
-                                <span>{selectedService?.time}</span>
+                                <span>{selectedService?.duration_min}min</span>
                             </SummaryRow>
                         </SummaryGrid>
                         <SummaryRow>
